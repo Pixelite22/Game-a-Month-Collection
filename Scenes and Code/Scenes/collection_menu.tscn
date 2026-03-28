@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bwr85b5xl6wk7"]
+
+[ext_resource type="Script" uid="uid://bkk48isax5yol" path="res://Scenes and Code/Scenes/collection_menu.gd" id="1_5qddx"]
+[ext_resource type="Texture2D" uid="uid://buw7f6li78alk" path="res://Assets/Sights/Pongalong Preview Image.png" id="1_i0is2"]
+[ext_resource type="Texture2D" uid="uid://begvvdkg3bjix" path="res://Assets/Sights/Comin to town Preview Image.png" id="2_74564"]
+[ext_resource type="Texture2D" uid="uid://bsxcvwqbvyg3y" path="res://Assets/Sights/Publix Accounting App Preview Image.png" id="3_dt4g8"]
+[ext_resource type="Texture2D" uid="uid://i37a6qxqnfbu" path="res://Assets/Sights/Scoundrel Preview Image.png" id="4_01m7q"]
+[ext_resource type="Texture2D" uid="uid://swupgsa0un3j" path="res://Assets/Sights/Lamplighters Preview Image.png" id="5_5qddx"]
+[ext_resource type="PackedScene" uid="uid://cdbkwoedq5ux6" path="res://Scenes and Code/Scenes/game_display.tscn" id="6_dt4g8"]
+[ext_resource type="Texture2D" uid="uid://dr2awhxdlrlu4" path="res://Assets/Sights/Hack and Sketch Preview Image.png" id="7_01m7q"]
+
+[node name="Collection Menu" type="Control" unique_id=1766728928]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5qddx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1094532604]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1788551678]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 43
+text = "Practice Collection!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Node" parent="." unique_id=692177353]
+
+[node name="Pongalong Display" parent="Buttons" unique_id=743895997 instance=ExtResource("6_dt4g8")]
+texture_normal = ExtResource("1_i0is2")
+month_made = 4
+year_made = 2025
+is_2D = true
+
+[node name="Comin to Town Display" parent="Buttons" unique_id=1549429867 instance=ExtResource("6_dt4g8")]
+offset_left = 782.0
+offset_right = 1098.0
+texture_normal = ExtResource("2_74564")
+month_made = 12
+year_made = 2025
+is_2D = true
+
+[node name="Publix Accounting App Display" parent="Buttons" unique_id=1554150830 instance=ExtResource("6_dt4g8")]
+offset_top = 350.0
+offset_bottom = 528.0
+texture_normal = ExtResource("3_dt4g8")
+month_made = 1
+year_made = 2026
+is_2D = true
+
+[node name="Scoundrel Display" parent="Buttons" unique_id=1173847842 instance=ExtResource("6_dt4g8")]
+offset_left = 416.0
+offset_top = 350.0
+offset_right = 732.0
+offset_bottom = 528.0
+texture_normal = ExtResource("4_01m7q")
+month_made = 2
+year_made = 2026
+is_2D = true
+
+[node name="Lamplighters Display" parent="Buttons" unique_id=885582133 instance=ExtResource("6_dt4g8")]
+offset_left = 782.0
+offset_top = 350.0
+offset_right = 1098.0
+offset_bottom = 528.0
+texture_normal = ExtResource("5_5qddx")
+month_made = 3
+year_made = 2026
+is_2D = true
+
+[node name="Hack and Sketch Display" parent="Buttons" unique_id=1167259582 instance=ExtResource("6_dt4g8")]
+offset_left = 416.0
+offset_right = 732.0
+texture_normal = ExtResource("7_01m7q")
+month_made = 8
+year_made = 2025
+is_2D = true
