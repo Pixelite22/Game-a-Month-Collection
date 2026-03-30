@@ -18,16 +18,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5qddx")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1094532604]
-layout_mode = 1
+[node name="Menu Contents" type="Node" parent="." unique_id=1208039525]
+
+[node name="ColorRect" type="ColorRect" parent="Menu Contents" unique_id=1094532604]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="RichTextLabel" parent="." unique_id=1788551678]
-layout_mode = 1
+[node name="Title" type="RichTextLabel" parent="Menu Contents" unique_id=1788551678]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 80.0
@@ -38,15 +38,15 @@ text = "Practice Collection!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Buttons" type="Node" parent="." unique_id=692177353]
+[node name="Buttons" type="Node" parent="Menu Contents" unique_id=692177353]
 
-[node name="Pongalong Display" parent="Buttons" unique_id=743895997 instance=ExtResource("6_dt4g8")]
+[node name="Pongalong Display" parent="Menu Contents/Buttons" unique_id=743895997 instance=ExtResource("6_dt4g8")]
 texture_normal = ExtResource("1_i0is2")
 month_made = 4
 year_made = 2025
 is_2D = true
 
-[node name="Comin to Town Display" parent="Buttons" unique_id=1549429867 instance=ExtResource("6_dt4g8")]
+[node name="Comin to Town Display" parent="Menu Contents/Buttons" unique_id=1549429867 instance=ExtResource("6_dt4g8")]
 offset_left = 782.0
 offset_right = 1098.0
 texture_normal = ExtResource("2_74564")
@@ -54,7 +54,7 @@ month_made = 12
 year_made = 2025
 is_2D = true
 
-[node name="Publix Accounting App Display" parent="Buttons" unique_id=1554150830 instance=ExtResource("6_dt4g8")]
+[node name="Publix Accounting App Display" parent="Menu Contents/Buttons" unique_id=1554150830 instance=ExtResource("6_dt4g8")]
 offset_top = 350.0
 offset_bottom = 528.0
 texture_normal = ExtResource("3_dt4g8")
@@ -62,7 +62,7 @@ month_made = 1
 year_made = 2026
 is_2D = true
 
-[node name="Scoundrel Display" parent="Buttons" unique_id=1173847842 instance=ExtResource("6_dt4g8")]
+[node name="Scoundrel Display" parent="Menu Contents/Buttons" unique_id=1173847842 instance=ExtResource("6_dt4g8")]
 offset_left = 416.0
 offset_top = 350.0
 offset_right = 732.0
@@ -72,7 +72,7 @@ month_made = 2
 year_made = 2026
 is_2D = true
 
-[node name="Lamplighters Display" parent="Buttons" unique_id=885582133 instance=ExtResource("6_dt4g8")]
+[node name="Lamplighters Display" parent="Menu Contents/Buttons" unique_id=885582133 instance=ExtResource("6_dt4g8")]
 offset_left = 782.0
 offset_top = 350.0
 offset_right = 1098.0
@@ -82,7 +82,7 @@ month_made = 3
 year_made = 2026
 is_2D = true
 
-[node name="Hack and Sketch Display" parent="Buttons" unique_id=1167259582 instance=ExtResource("6_dt4g8")]
+[node name="Hack and Sketch Display" parent="Menu Contents/Buttons" unique_id=1167259582 instance=ExtResource("6_dt4g8")]
 offset_left = 416.0
 offset_right = 732.0
 texture_normal = ExtResource("7_01m7q")
