@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4ipkp6f3oyif"]
 
-[ext_resource type="PackedScene" uid="uid://cdbkwoedq5ux6" path="res://Scenes and Code/Scenes/game_display.tscn" id="1_c8nfc"]
+[ext_resource type="PackedScene" uid="uid://cdbkwoedq5ux6" path="res://Scenes and Code/Scenes/collection_menu_3d.tscn" id="1_c8nfc"]
 [ext_resource type="Texture2D" uid="uid://buw7f6li78alk" path="res://Assets/Sights/Pongalong Preview Image.png" id="2_egqk8"]
 [ext_resource type="Texture2D" uid="uid://begvvdkg3bjix" path="res://Assets/Sights/Comin to town Preview Image.png" id="3_2fs70"]
 [ext_resource type="Texture2D" uid="uid://bsxcvwqbvyg3y" path="res://Assets/Sights/Publix Accounting App Preview Image.png" id="4_4vq2j"]
