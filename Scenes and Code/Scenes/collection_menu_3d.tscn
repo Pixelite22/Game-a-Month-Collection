@@ -1,32 +1,110 @@
-[gd_scene format=3 uid="uid://cdbkwoedq5ux6"]
+[gd_scene format=3 uid="uid://d28d4fpcr7rrg"]
 
-[ext_resource type="Script" uid="uid://e8qg76w5kivn" path="res://Scenes and Code/Code/game_display.gd" id="1_rvwf1"]
+[ext_resource type="PackedScene" uid="uid://em46cryv4ico" path="res://Scenes and Code/Scenes/game_display_3d.tscn" id="1_3m3jc"]
+[ext_resource type="Script" uid="uid://6ojeyllpgfw4" path="res://Scenes and Code/Scenes/collection_menu_3d.gd" id="1_4nbvj"]
+[ext_resource type="Texture2D" uid="uid://buw7f6li78alk" path="res://Assets/Sights/Pongalong Preview Image.png" id="3_q4u68"]
+[ext_resource type="Texture2D" uid="uid://dr2awhxdlrlu4" path="res://Assets/Sights/Hack and Sketch Preview Image.png" id="4_omdtb"]
+[ext_resource type="Texture2D" uid="uid://begvvdkg3bjix" path="res://Assets/Sights/Comin to town Preview Image.png" id="5_jtf78"]
+[ext_resource type="Texture2D" uid="uid://i37a6qxqnfbu" path="res://Assets/Sights/Scoundrel Preview Image.png" id="6_flt5q"]
+[ext_resource type="Texture2D" uid="uid://swupgsa0un3j" path="res://Assets/Sights/Lamplighters Preview Image.png" id="7_kc50y"]
+[ext_resource type="Texture2D" uid="uid://c2yambce5snm6" path="res://Resources/Skybox/3d collection skybox.png" id="8_omdtb"]
 
-[node name="Game Display" type="TextureButton" unique_id=743895997]
-offset_right = 316.0
-offset_bottom = 178.0
-ignore_texture_size = true
-stretch_mode = 4
-script = ExtResource("1_rvwf1")
+[sub_resource type="Curve3D" id="Curve3D_h1ea7"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 21, 14, 0, -8, 0, -8, 0, 0, 0, -21, -14, 0, 5, 0, 8),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=315069982]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 129.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.50980395)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_q4u68"]
+panorama = ExtResource("8_omdtb")
 
-[node name="Title" type="Label" parent="ColorRect" unique_id=859815960]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Title
-xD - xx/xxxx"
-horizontal_alignment = 1
-vertical_alignment = 1
+[sub_resource type="Sky" id="Sky_omdtb"]
+sky_material = SubResource("PanoramaSkyMaterial_q4u68")
+
+[sub_resource type="Environment" id="Environment_jtf78"]
+background_mode = 2
+sky = SubResource("Sky_omdtb")
+
+[node name="Collection Menu 3D" type="Node3D" unique_id=1267078495]
+script = ExtResource("1_4nbvj")
+
+[node name="Carousel" type="Path3D" parent="." unique_id=2114266925]
+curve = SubResource("Curve3D_h1ea7")
+debug_custom_color = Color(1, 0, 0, 1)
+
+[node name="Pongalong PathFollow" type="PathFollow3D" parent="Carousel" unique_id=669687321]
+transform = Transform3D(-0.027142428, -0.54246634, -0.83963704, -0.01780944, 0.8400755, -0.542174, 0.9994705, 0.00023754274, -0.032462794, -6.520836, 0.97102416, -7.9721503)
+progress = 1.7696166
+
+[node name="Pongalong Display 3D" parent="Carousel/Pongalong PathFollow" unique_id=1588757938 instance=ExtResource("1_3m3jc")]
+transform = Transform3D(-1.9987817, 0.036987774, -0.05919283, -3.6902112e-09, 1.6960963, 1.0598384, 0.0697989, 1.0591928, -1.6950631, 0, 0, 0)
+game_name = "Pongalong"
+month_made = 4
+year_made = 2025
+is_2D = true
+thumbnail = ExtResource("3_q4u68")
+
+[node name="Hack and Sketch PathFollow" type="PathFollow3D" parent="Carousel" unique_id=1507020811]
+transform = Transform3D(-0.56628895, -0.2994761, -0.76787186, -0.25958395, 0.94904196, -0.178696, 0.7822584, 0.09813386, -0.61517256, 3.466058, 6.05971, -5.075084)
+progress = 13.567061
+
+[node name="Hack and Sketch Display 3D" parent="Carousel/Hack and Sketch PathFollow" unique_id=718613077 instance=ExtResource("1_3m3jc")]
+transform = Transform3D(-1.9987817, 0.036987774, -0.05919283, -3.6902112e-09, 1.6960963, 1.0598384, 0.0697989, 1.0591928, -1.6950631, 0, 0, 0)
+game_name = "Hack and Sketch"
+month_made = 8
+year_made = 2025
+is_2D = true
+thumbnail = ExtResource("4_omdtb")
+
+[node name="Comin to Town PathFollow" type="PathFollow3D" parent="Carousel" unique_id=120832188]
+transform = Transform3D(-0.974548, -0.115476094, 0.19213672, 0.013180639, 0.8261086, 0.563354, -0.22377986, 0.5515494, -0.8035624, 6.09024, 2.431432, 4.8530364)
+progress = 25.364506
+
+[node name="Comin To Town Display 3D" parent="Carousel/Comin to Town PathFollow" unique_id=1618470551 instance=ExtResource("1_3m3jc")]
+transform = Transform3D(-1.9650044, -0.3680964, -0.05713746, -0.37043583, 1.8986809, 0.50773054, -0.03920403, 0.5094291, -1.9336355, 0, 0, 0)
+game_name = "Comin to Town"
+month_made = 12
+year_made = 2026
+is_2D = true
+thumbnail = ExtResource("5_jtf78")
+
+[node name="Scoundrel PathFollow" type="PathFollow3D" parent="Carousel" unique_id=1188566448]
+transform = Transform3D(-0.23839998, -0.44725376, 0.8620477, 0.7298012, 0.5031319, 0.46286586, -0.6407431, 0.7394719, 0.20646015, -1.5049794, -3.9751196, 7.3325534)
+progress = 37.16195
+
+[node name="Scoundrel Display 3D" parent="Carousel/Scoundrel PathFollow" unique_id=1094893810 instance=ExtResource("1_3m3jc")]
+transform = Transform3D(2, 3.5527137e-15, 0, -3.5527137e-15, 2, -5.9604638e-08, -1.05879106e-22, 5.9604638e-08, 2, 0, 0, 0)
+game_name = "Scoundrel"
+month_made = 2
+year_made = 2026
+is_2D = true
+thumbnail = ExtResource("6_flt5q")
+
+[node name="Lamplighters PathFollow" type="PathFollow3D" parent="Carousel" unique_id=925553550]
+transform = Transform3D(0.5642696, -0.8090119, 0.16460666, 0.79248595, 0.47488007, -0.38268802, 0.23143089, 0.3463886, 0.9090936, -9.3375, -5.345502, 0.22246584)
+progress = 48.959393
+
+[node name="Lamplighters Display 3D" parent="Carousel/Lamplighters PathFollow" unique_id=1445663543 instance=ExtResource("1_3m3jc")]
+transform = Transform3D(2, 3.5527137e-15, 0, -3.5527137e-15, 2, -5.9604638e-08, -1.05879106e-22, 5.9604638e-08, 2, 0, 0, 0)
+game_name = "Lamplighters"
+month_made = 3
+year_made = 2026
+is_2D = true
+thumbnail = ExtResource("7_kc50y")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1797019940]
+transform = Transform3D(0.96954036, 0.04120398, -0.2414412, -0.15455128, 0.86764616, -0.47255078, 0.19001454, 0.49547216, 0.8475859, 5.201945, 1.339118, 6.6473284)
+fov = 77.46939
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=650472580]
+transform = Transform3D(0.96954036, 0.041203957, -0.24144119, -0.15455128, 0.86764604, -0.47255078, 0.19001454, 0.4954721, 0.8475859, 2.9952803, 2.179765, 6.948844)
+light_energy = 2.0
+light_size = 10.0
+distance_fade_enabled = true
+omni_range = 4096.0
+omni_attenuation = 0.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=4992911]
+environment = SubResource("Environment_jtf78")

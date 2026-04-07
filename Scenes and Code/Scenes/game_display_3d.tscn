@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://em46cryv4ico"]
 
 [ext_resource type="Script" uid="uid://bdwdivwoxwmim" path="res://Scenes and Code/Code/game_display_3d.gd" id="1_cw7yx"]
-[ext_resource type="PackedScene" uid="uid://cdbkwoedq5ux6" path="res://Scenes and Code/Scenes/collection_menu_3d.tscn" id="1_ktq8s"]
+[ext_resource type="PackedScene" uid="uid://cdbkwoedq5ux6" path="res://Scenes and Code/Scenes/game_display.tscn" id="1_ktq8s"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_cw7yx"]
 size = Vector2(1.786, 1)
@@ -14,12 +14,13 @@ resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_ktq8s")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lar8q"]
-size = Vector3(1.7860718, 1, 0.001)
+size = Vector3(1.7860718, 1, 0.02784375)
 
 [node name="Game Display 3D" type="Node3D" unique_id=1588757938]
 script = ExtResource("1_cw7yx")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=611767536]
+handle_input_locally = false
 size = Vector2i(316, 179)
 
 [node name="Control" type="Control" parent="SubViewport" unique_id=1939787540]
@@ -38,10 +39,10 @@ is_2D = true
 mesh = SubResource("QuadMesh_cw7yx")
 surface_material_override/0 = SubResource("StandardMaterial3D_cw7yx")
 
-[node name="Area3D" type="Area3D" parent="MeshInstance3D" unique_id=1209079165]
+[node name="Area3D" type="Area3D" parent="." unique_id=1209079165]
 
-[node name="Collision" type="CollisionShape3D" parent="MeshInstance3D/Area3D" unique_id=2123356468]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002532959, 0, 0.004382819)
+[node name="Collision" type="CollisionShape3D" parent="Area3D" unique_id=2123356468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002532959, 0, -0.0034112222)
 shape = SubResource("BoxShape3D_lar8q")
 
-[connection signal="input_event" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_input_event"]
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
