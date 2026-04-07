@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://cdbkwoedq5ux6"]
 
-[ext_resource type="Script" uid="uid://e8qg76w5kivn" path="res://Scenes and Code/Scenes/game_display.gd" id="1_rvwf1"]
+[ext_resource type="Script" uid="uid://e8qg76w5kivn" path="res://Scenes and Code/Code/game_display.gd" id="1_rvwf1"]
 
 [node name="Game Display" type="TextureButton" unique_id=743895997]
-offset_left = 50.0
-offset_top = 100.0
-offset_right = 366.0
-offset_bottom = 278.0
+offset_right = 316.0
+offset_bottom = 178.0
 ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("1_rvwf1")
+game_name = null
+month_made = null
+year_made = null
+is_2D = null
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=315069982]
 layout_mode = 1
@@ -32,3 +34,5 @@ text = "Title
 xD - xx/xxxx"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
