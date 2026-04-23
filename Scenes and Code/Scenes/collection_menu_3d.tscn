@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://d28d4fpcr7rrg"]
 
 [ext_resource type="PackedScene" uid="uid://em46cryv4ico" path="res://Scenes and Code/Scenes/game_display_3d.tscn" id="1_3m3jc"]
-[ext_resource type="Script" uid="uid://6ojeyllpgfw4" path="res://Scenes and Code/Scenes/collection_menu_3d.gd" id="1_4nbvj"]
+[ext_resource type="Script" uid="uid://6ojeyllpgfw4" path="res://Scenes and Code/Code/collection_menu_3d.gd" id="1_4nbvj"]
 [ext_resource type="Texture2D" uid="uid://buw7f6li78alk" path="res://Assets/Sights/Pongalong Preview Image.png" id="3_q4u68"]
 [ext_resource type="Texture2D" uid="uid://dr2awhxdlrlu4" path="res://Assets/Sights/Hack and Sketch Preview Image.png" id="4_omdtb"]
 [ext_resource type="Texture2D" uid="uid://begvvdkg3bjix" path="res://Assets/Sights/Comin to town Preview Image.png" id="5_jtf78"]
 [ext_resource type="Texture2D" uid="uid://i37a6qxqnfbu" path="res://Assets/Sights/Scoundrel Preview Image.png" id="6_flt5q"]
 [ext_resource type="Texture2D" uid="uid://swupgsa0un3j" path="res://Assets/Sights/Lamplighters Preview Image.png" id="7_kc50y"]
 [ext_resource type="Texture2D" uid="uid://c2yambce5snm6" path="res://Resources/Skybox/3d collection skybox.png" id="8_omdtb"]
+[ext_resource type="Texture2D" uid="uid://bx25iiq27ewap" path="res://Assets/Sights/3D Model/Earth.jpg" id="9_vufd7"]
+[ext_resource type="Script" uid="uid://djqxt5ns7idga" path="res://Scenes and Code/Code/earth.gd" id="10_uri8j"]
+[ext_resource type="Texture2D" uid="uid://bha55rdfuglh5" path="res://Assets/Sights/3D Model/Earth/earth albedo.jpg" id="11_0t40j"]
+[ext_resource type="Texture2D" uid="uid://bxqpjnq15w5ex" path="res://Assets/Sights/3D Model/Textures/Diffuse_2K.png" id="12_0t40j"]
+[ext_resource type="Script" uid="uid://hm6w01nmsawg" path="res://Scenes and Code/Code/moon.gd" id="13_g0q7b"]
 
 [sub_resource type="Curve3D" id="Curve3D_h1ea7"]
 closed = true
@@ -26,6 +31,34 @@ sky_material = SubResource("PanoramaSkyMaterial_q4u68")
 [sub_resource type="Environment" id="Environment_jtf78"]
 background_mode = 2
 sky = SubResource("Sky_omdtb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uri8j"]
+albedo_texture = ExtResource("9_vufd7")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 30.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_uri8j"]
+material = SubResource("StandardMaterial3D_uri8j")
+radius = 5.0
+height = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0q7b"]
+albedo_texture = ExtResource("11_0t40j")
+
+[sub_resource type="Curve3D" id="Curve3D_dfhrs"]
+closed = true
+_data = {
+"points": PackedVector3Array(30, 0, 30, -30, 0, -15, 1.2943243, -0.25911304, -7.257995, 0, 0, 0, 0, 0, 0, -3.1538992, 3.9913015, 8.766376),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vufd7"]
+albedo_texture = ExtResource("12_0t40j")
+
+[sub_resource type="SphereMesh" id="SphereMesh_0t40j"]
+material = SubResource("StandardMaterial3D_vufd7")
 
 [node name="Collection Menu 3D" type="Node3D" unique_id=1267078495]
 script = ExtResource("1_4nbvj")
@@ -64,7 +97,7 @@ progress = 25.364506
 
 [node name="Comin To Town Display 3D" parent="Carousel/Comin to Town PathFollow" unique_id=1618470551 instance=ExtResource("1_3m3jc")]
 transform = Transform3D(-1.9650044, -0.3680964, -0.05713746, -0.37043583, 1.8986809, 0.50773054, -0.03920403, 0.5094291, -1.9336355, 0, 0, 0)
-game_name = "Comin to Town"
+game_name = "Comin' to Town"
 month_made = 12
 year_made = 2026
 is_2D = true
@@ -99,7 +132,7 @@ transform = Transform3D(0.96954036, 0.04120398, -0.2414412, -0.15455128, 0.86764
 fov = 77.46939
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=650472580]
-transform = Transform3D(0.96954036, 0.041203957, -0.24144119, -0.15455128, 0.86764604, -0.47255078, 0.19001454, 0.4954721, 0.8475859, 2.9952803, 2.179765, 6.948844)
+transform = Transform3D(0.96954036, 0.041203957, -0.24144118, -0.15455128, 0.86764604, -0.47255078, 0.19001454, 0.4954721, 0.8475859, 0, 0, 5.916367)
 light_energy = 2.0
 light_size = 10.0
 distance_fade_enabled = true
@@ -108,3 +141,21 @@ omni_attenuation = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=4992911]
 environment = SubResource("Environment_jtf78")
+
+[node name="Earth" type="MeshInstance3D" parent="." unique_id=248477276]
+transform = Transform3D(-0.313653, 0.13638021, 0.9396926, 0.39874908, 0.9170601, 0, -0.8617546, 0.37470156, -0.34202012, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_uri8j")
+surface_material_override/0 = SubResource("StandardMaterial3D_g0q7b")
+script = ExtResource("10_uri8j")
+
+[node name="Path3D" type="Path3D" parent="Earth" unique_id=1143843932]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 0.9999999, 0, 0, 1.4901161e-08, 1, 0, 0, 0)
+curve = SubResource("Curve3D_dfhrs")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Earth/Path3D" unique_id=2136809820]
+transform = Transform3D(0.44721344, 0, 0.8944266, 0, 0.9999992, 0, -0.894427, 0, 0.44721323, 1.2943243, -0.25911304, -7.257995)
+
+[node name="Moon" type="MeshInstance3D" parent="Earth/Path3D/PathFollow3D" unique_id=856261383]
+mesh = SubResource("SphereMesh_0t40j")
+script = ExtResource("13_g0q7b")
